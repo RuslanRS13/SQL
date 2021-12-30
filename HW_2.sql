@@ -14,7 +14,7 @@ select * from employees;
 --2)	Наполнить таблицу employee 70 строками.
 
 insert into employees(employee_name)
-values  ('Manuel_Neuer'),
+values  	('Manuel_Neuer'),
 		('Dayot_Upamecano'),
 		('Omar_Richards'),
 		('Niklas_Sule'),
@@ -101,7 +101,7 @@ select * from salary;
 --4)	Наполнить таблицу salary 15 строками:
 
 insert into salary (monthly_salary)
-values  (1000),
+values 		(1000),
 		(1100),
 		(1200),
 		(1300),
@@ -134,7 +134,7 @@ select * from employee_salary;
 -- в 10 строк из 40 вставить несуществующие employee_id
 
 insert into employee_salary (employee_id, salary_id)
-values  (1, 1),
+values  	(1, 1),
 		(3, 5),
 		(5, 10),
 		(7, 15),
@@ -193,7 +193,7 @@ alter column role_name type varchar(40) using role_name::varchar(30);
 
 --9)	Наполнить таблицу roles 20 строками:
 insert into roles (role_name)
-values  ('Junior_Python_developer'),
+values  	('Junior_Python_developer'),
 		('Middle_Python_developer'),
 		('Senior_Python_developer'),
 		('Junior_Java_developer'),	
@@ -234,7 +234,7 @@ select * from roles_employee;
 --11)	Наполнить таблицу roles_employee 40 строками:
 
 insert into roles_employee (employee_id, role_id)
-values  (5,1),
+values  	(5,1),
 		(10,4),
 		(15,8),
 		(20,12),
