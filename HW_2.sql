@@ -83,8 +83,7 @@ values  	('Manuel_Neuer'),
 		('Ronaldinho'),
 		('Rivaldo'),
 		('Ronaldo'),
-		('Pedro'),
-		('Luiz Suares');
+		('Pedro');
 	
 --3)	Создать таблицу salary
 -- id. Serial  primary key,
