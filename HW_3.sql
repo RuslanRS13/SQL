@@ -545,7 +545,7 @@ select employee_name, role_name, monthly_salary from employee_salary_new ESN
 	join employees E on ESN.employee_id = E.id 
 	join roles R on ESN.role_id = R.id 
 	join salary S on ESN.salary_id = S.id 
-	where monthly_salary >1700 and monthly_salary <2300 order by monthly_salary asc;
+	where monthly_salary between 1700 and 2300 order by monthly_salary asc;
 	
  --31. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП меньше 2300
 
