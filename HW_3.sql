@@ -291,9 +291,9 @@ select employee_name, s.monthly_salary from employee_salary ES
 	
 --3. Вывести все зарплатные позиции, но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 
- select monthly_salary from employee_salary ES
- 	join employees E on ES.employee_id = E.id 
- 	join salary S on ES.salary_id = S.id;
+ select monthly_salary from salary S
+ 	left join employee_salary ES on S.id = ES.salary_id 
+ 	where es.employee_id is null;
  
  --4. Вывести все зарплатные позиции  меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
  
