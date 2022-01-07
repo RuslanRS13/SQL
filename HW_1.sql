@@ -151,6 +151,6 @@ select id, name, email, created_on
 --32. Вывести id пользователя, имя, дату создания пользователя. Отсортировать по порядку убывания даты добавления пользователя
 select id, name, email, created_on 
 	from students 
-order by created_on desc;
+	order by created_on desc;
 
 
