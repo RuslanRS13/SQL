@@ -13,7 +13,7 @@ select employee_name, monthly_salary
 
 --2. Вывести всех работников у которых ЗП меньше 2000.
 
-	select employee_name, monthly_salary 
+select employee_name, monthly_salary 
 	from employees E
 	join employee_salary ES on e.id = ES.employee_id 
 	join salary S on S.id = ES.salary_id
@@ -37,10 +37,10 @@ select employee_name, monthly_salary
 
 --5. Найти всех работников кому не начислена ЗП
 
-    select employee_name 
-    from employee_salary ES
+select employee_name 
+   	from employee_salary ES
 	right join employees E on ES.employee_id = E.id 
-    where ES.employee_id is null;
+    	where ES.employee_id is null;
 
 --6. Вывести всех работников с названиями их должности
 
@@ -181,7 +181,7 @@ select r.role_name, s.monthly_salary
 
 --21. Вывести среднюю зарплату всех Junior специалистов
 
-	select avg (s.monthly_salary) 
+select avg (s.monthly_salary) 
 	from salary S
 	join employee_salary ES on ES.salary_id = S.id 
 	join employees E on ES.employee_id = E.id 
