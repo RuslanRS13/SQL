@@ -1,34 +1,47 @@
 --1. Вывести всех работников чьи зарплаты есть в базе, вместе с зарплатами.
 	
-select employee_name, monthly_salary from employee_salary ES
-	join employees E on ES.employee_id = E.id
-	join salary S on ES.salary_id = S.id;
+select employee_name, monthly_salary 
+	from employees 	e
+	join employee_salary es on e.id = es.employee_id 
+	join salary S on S.id = es.salary_id;
 
 --2. Вывести всех работников у которых ЗП меньше 2000.
 
-select employee_name, s.monthly_salary from employee_salary ES
-	join employees E on ES.employee_id = E.id 
-	join salary S on ES.salary_id = S.id
+	select employee_name, monthly_salary 
+	from employees 	e
+	join employee_salary es on e.id = es.employee_id 
+	join salary S on S.id = es.salary_id
 	where s.monthly_salary<2000;
 	
 --3. Вывести все зарплатные позиции, но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 
- select monthly_salary from salary S
- 	left join employee_salary ES on S.id = ES.salary_id 
- 	where es.employee_id is null;
+ select employee_name, monthly_salary 
+ 	from employee_salary ES
+ 	left join employees E on ES.employee_id = E.id
+ 	join salary S on Es.salary_id = S.id
+ 	where employee_name is null;
  
+ 
+ select e.employee_name, s.monthly_salary from employee_salary es 
+right join employees e on es.employee_id = e.id 
+right join salary s on es.salary_id  = s.id 
+where e.employee_name is null;
+
  --4. Вывести все зарплатные позиции  меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
  
-select s.monthly_salary from employee_salary ES
-	join employees E on ES.employee_id = E.id 
-	join salary S on ES.salary_id = S.id 
-	where s.monthly_salary<2000;
+select employee_name, monthly_salary 
+ 	from employee_salary ES
+ 	left join employees E on ES.employee_id = E.id
+ 	join salary S on Es.salary_id = S.id
+ 	where employee_name is null 
+ 		and monthly_salary < 2000;
 
 --5. Найти всех работников кому не начислена ЗП
 
-select employee_name from employee_salary ES
-	right join employees E on ES.employee_id = E.id 
-     where ES.employee_id is null;
+select employee_name, monthly_salary from employee_salary ES
+	 left join employees E on ES.employee_id = E.id 
+	 join salary S on ES.salary_id = S.id
+     where monthly_salary is null;
 
 --6. Вывести всех работников с названиями их должности
 
