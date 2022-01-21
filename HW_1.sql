@@ -30,12 +30,12 @@ select id, name, email, created_on
 --8. Вывести пользователей где паспорт password 12333
 select * 
 	from students 
-	where password = 12333;
+	where password = '12333';
 
 --9. Вывести пользователей которые были созданы 2021-03-26 00:00:00
 select * 
 	from students
-	where created_on = 2021-03-26 00:00:00;
+	where created_on = '2021-03-26 00:00:00';
 
 --10. Вывести пользователей где в имени есть слово Анна
 select * 
@@ -55,24 +55,24 @@ select *
 --13. Вывести пользователей которые были созданы 2021-07-12 00:00:00
 select * 
 	from students 
-	where created_on = 2021-07-12 00:00:00;
+	where created_on = '2021-07-12 00:00:00';
 
 --14. Вывести пользователей которые были созданы 2021-07-12 00:00:00 и имеют пароль 1m313
 select * 
 	from students 
-	where created_on = 2021-07-12 00:00:00
+	where created_on = '2021-07-12 00:00:00'
 		and password = '1m313'; 
 
 --15. Вывести пользователей которые были созданы 2021-07-12 00:00:00 и у которых в имени есть слово Andrey
 select * 
 	from students 
-	where created_on = 2021-07-12 00:00:00 
+	where created_on = '2021-07-12 00:00:00' 
 		and name like 'Andrey%';
 
 --16. Вывести пользователей которые были созданы 2021-07-12 00:00:00 и у которых в имени есть цифра 8
 select * 
 	from students 
-	where created_on = 2021-07-12 00:00:00
+	where created_on = '2021-07-12 00:00:00'
 		and name like '%8%';
 
  --17. Вывести пользователя у которых id равен 112
@@ -88,7 +88,7 @@ select *
 --19. Вывести пользователя у которых id равен 140
 select * 
 	from students 
-	where id > 140;
+	where id > '140';
 
 --20. Вывести пользователя у которых id равен 130
 select * 
@@ -117,19 +117,19 @@ select *
 	 	and id < 190;
 
 --25. Вывести пользователя у которых id между 180 и 190
-select * f
+select * 
 	from students 
 	where id between 180 and 190;
 
 --26. Вывести пользователей где password равен 12333, 1m313, 123313
 select * 
 	from students 
-	where password in (12333, '1m313', 123313); 
+	where password in ('12333', '1m313', '123313'); 
 
 --27. Вывести пользователей где created_on равен 2020-10-03 00:00:00, 2021-05-19 00:00:00, 2021-03-26 00:00:00
 select * 
 	from students 
-	where created_on in (2020-10-03 00:00:00, 2021-05-19 00:00:00, 2021-03-26 00:00:00);
+	where created_on in ('2020-10-03 00:00:00', '2021-05-19 00:00:00', '2021-03-26 00:00:00');
 
 --28. Вывести минимальные id
 select min(id) As SmallestId 
@@ -151,6 +151,6 @@ select id, name, email, created_on
 --32. Вывести id пользователя, имя, дату создания пользователя. Отсортировать по порядку убывания даты добавления пользователя
 select id, name, email, created_on 
 	from students 
-order by created_on desc;
+	order by created_on desc;
 
 
