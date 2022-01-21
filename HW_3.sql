@@ -8,15 +8,15 @@ select * from roles_employee;
 	
 select employee_name, monthly_salary 
 	from employees E
-	join employee_salary ES on E.id = ES.employee_id 
-	join salary S on S.id = ES.salary_id;
+	join employee_salary ES on ES.employee_id = E.id
+	join salary S on ES.salary_id = S.id;
 
 --2. Вывести всех работников у которых ЗП меньше 2000.
 
 select employee_name, monthly_salary 
 	from employees E
-	join employee_salary ES on E.id = ES.employee_id 
-	join salary S on S.id = ES.salary_id
+	join employee_salary ES on ES.employee_id = E.id
+	join salary S on ES.salary_id = S.id
 	where monthly_salary<2000;
 	
 --3. Вывести все зарплатные позиции, но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
@@ -291,4 +291,4 @@ select employee_name, role_name, monthly_salary
 	join employees E on ES.employee_id = E.id
 	left join roles_employee RE on RE.employee_id = E.id
 	left join roles R on RE.role_id = R.id
-	where  monthly_salary in (1100, 1500, 2000);
+	where  monthly_salary in (1100, 1500, 2000) order by monthly_salary asc;
